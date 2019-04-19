@@ -1,0 +1,15 @@
+job('simpleJobWithParameterGit-SeedJob') {
+ parameters {
+   stringParam('Object','Undescribed','This parameter describes type of the object')
+ }
+
+  steps {
+    shell ('echo $JOB_NAME $BUILDNUMBER')
+    shell ('echo $Object')
+    shell ('echo I have been called from GIT')
+  }
+  
+  publishers {
+    downstream ('simpleJobWithParameterGit-SeedJob','SUCCESS')
+  }
+}
