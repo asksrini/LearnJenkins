@@ -11,9 +11,7 @@ data2 = jsonSlurper2.parse(jobs)
 def allSJObs = data2.jobs as Object
 
 data2.jobs.each
-
   {
-
     println("Create Job $it.repositoryName")
     // here starts create the job
 
@@ -32,7 +30,6 @@ data2.jobs.each
     steps {
 
         downstreamParameterized {
-
             trigger('Project1') {
                 block {
                     buildStepFailure('FAILURE')
