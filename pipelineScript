@@ -1,0 +1,16 @@
+node {
+    stage('Create File') {
+        sh 'rm -f a1.txt'
+        sh 'touch a1.txt'
+    }
+    
+    stage ('write') {
+        sh 'echo "This is the first line produced from GIT script" > a1.txt'
+        sh 'echo "This is the second line produced from GIT script" >> a1.txt'
+        
+    }
+    
+    stage ('Print') {
+        sh 'cat a1.txt'
+    }
+}
