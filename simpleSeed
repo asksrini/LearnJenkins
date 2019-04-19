@@ -1,4 +1,4 @@
-job('simpleJobWithParameterGit-SeedJob') {
+job('simpleTrigger') {
  parameters {
    stringParam('Object','Undescribed','This parameter describes type of the object')
  }
@@ -10,6 +10,6 @@ job('simpleJobWithParameterGit-SeedJob') {
   }
   
   publishers {
-    downstream ('simpleJobWithParameterGit-SeedJob','SUCCESS')
+    downstream ('simpleJobWithParameter-SeedJob','SUCCESS')
   }
 }
