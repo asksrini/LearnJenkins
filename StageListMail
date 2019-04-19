@@ -1,0 +1,15 @@
+node {
+    stage('Create File') {
+        sh 'touch a.txt'
+    }
+    
+    stage ('write') {
+        sh 'echo "This is the first line - S2" > a.txt'
+        sh 'echo "This is the second line - S2" >> a.txt'
+        
+    }
+    
+    stage ('Mail success') {
+       emailext body: 'You are now watching the build $BUILD_NUMBER', subject: '(S3) Build is successful $BUILD_NUMBER', to: 'badami@hotmail.com'
+    }
+}
